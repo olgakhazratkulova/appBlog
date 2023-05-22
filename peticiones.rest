@@ -1,0 +1,69 @@
+@host = http://localhost:3000
+
+// recupera todos los autores
+GET {{host}}/api/autores
+
+###/recupera un autor segun el ID indicado
+GET {{host}}/api/autores/1
+
+###/recupera todos los autores con todos sus posts
+GET {{host}}/api/autores/posts
+
+###/recupera un autor en concreto con todos sus posts
+GET {{host}}/api/autores/posts/100
+
+###/crea un autor nuevo
+POST {{host}}/api/autores
+Content-Type: application/json
+
+{
+    "nombre": "Ivan",
+    "email": "ivan@gmail.com",
+    "imagen": "https://images.panda.org/assets/images/pages/welcome/orangutan_1600x1000_279157.jpg"
+}
+
+###/actualiza los datod de un autor por su ID
+PUT {{host}}/api/autores/40
+Content-Type: application/json
+
+{
+    "nombre": "Ivan2",
+    "email": "ivan2@gmail.com",
+    "imagen": "https://pixlr.com/images/index/remove-bg.webp"
+}
+
+###/elimina un autor
+DELETE {{host}}/api/autores/40
+
+
+
+
+// recupera todos los posts
+###
+GET {{host}}/api/posts
+
+###/recupera un post en concreto con todos los datos de autor
+GET {{host}}/api/posts/3
+
+###/ crea un post nuevo
+POST {{host}}/api/posts
+Content-Type: application/json
+
+{
+    "título": "Cómo crear un fichero js",
+    "descripción": "pasos a seguir",
+    "categoría": "tecnología"
+}
+
+###/ actualiza un post existente
+PUT {{host}}/api/posts/53
+Content-Type: application/json
+
+{
+    "título": "Cómo crear un fichero css",
+    "descripción": "pasos a seguir.",
+    "categoría": "tecnología"
+}
+
+###/elimina un post
+DELETE {{host}}/api/posts/53
